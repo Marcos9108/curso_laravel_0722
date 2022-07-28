@@ -15,6 +15,11 @@
                     @endif
 
                     You are logged in!
+
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <a href="{{ route('empleado.index') }}" class="btn btn-info btn-block" >Ir a empleados</a>
+                    </div>
+
                 </div>
             </div>
         </div>
