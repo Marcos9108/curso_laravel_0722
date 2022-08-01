@@ -23,10 +23,11 @@ class RedirectByName
      */
     public function handle($request, Closure $next)
     {
-        if($this->auth && $this->auth->user()->name != 'Admin'){
+        if($this->auth && $this->auth->user()->name == 'Admin'){
+            return $next($request);
+        } else {
             //$this->auth->logout();
             return redirect()->route('empleado.index');
         }
-        return $next($request);
     }
 }

@@ -11,8 +11,8 @@ class EmpleadoController extends Controller
     public function __construct()
     {
         //Linea para agregar un Middleware a las funciones del controlador
-        //$this->middleware('auth');
-        //$this->middleware('authByName')->only('create','edit','destroy');
+        /*$this->middleware('auth')->except('index','create');
+        $this->middleware('authByName')->only('create','edit','destroy');*/
     }
 
     /**
@@ -48,11 +48,11 @@ class EmpleadoController extends Controller
 
         $this->validate($request,[
             'nombre' => 'required',
-            'edad' => 'required',
+            'edad' => 'required|numeric',
             'puesto' => 'required',
             'salario'=> 'required']);
 
-        $arrayUpdate =[
+        $arrayStore =[
             'nombre' => $request->get("nombre"),
             'edad' => $request->get('edad'),
             'puesto' => $request->get('puesto'),
@@ -60,7 +60,7 @@ class EmpleadoController extends Controller
             'activo' => $request->has('activo') ? $request->get('activo') : 0
         ];
 
-        Empleado::create($arrayUpdate);
+        Empleado::create($arrayStore);
 
         return redirect()->route('empleado.index')->with('success','Registro creado satisfactoriamente');
     }
