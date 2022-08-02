@@ -20,6 +20,10 @@
                         <a href="{{ route('empleado.index') }}" class="btn btn-info btn-block" >Ir a empleados</a>
                     </div>
 
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <a href="{{ route('certificaciones.index') }}" class="btn btn-info btn-block">Ir a certificaciones</a>
+                    </div>
+
                 </div>
             </div>
         </div>

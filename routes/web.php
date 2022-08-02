@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+Route::get('certificaciones','CertificacionesController@index')->name('certificaciones.index');
 Route::get('empleado','EmpleadoController@index')->name('empleado.index');
 
 
@@ -39,5 +39,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::put('empleado/{emppleado}','EmpleadoController@update')->name('empleado.update');
 
     Route::delete('empleado/{empleado}','EmpleadoController@destroy')->name('empleado.destroy')->middleware("authByName");
+
+
+    Route::get('certificaciones','CertificacionesController@index')->name('certificaciones.index')->middleware("auth");
 
 });
