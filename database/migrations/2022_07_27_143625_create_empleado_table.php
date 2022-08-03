@@ -14,8 +14,11 @@ class CreateEmpleadoTable extends Migration
     public function up()
     {
         Schema::create('empleado', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->string('nombre', 50)->after('id');
+            $table->string('puesto', 30)->after('nombre');
+            $table->tinyInteger('edad')->after('puesto');
+            $table->integer('salario')->after('edad');
+            $table->boolean('activo')->after('salario');
         });
     }
 
@@ -26,6 +29,10 @@ class CreateEmpleadoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empleado');
+        $table->dropColumn('nombre');
+            $table->dropColumn('puesto');
+            $table->dropColumn('edad');
+            $table->dropColumn('salario');
+            $table->dropColumn('activo');
     }
 }
