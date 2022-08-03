@@ -41,5 +41,3 @@ Route::group(['middleware' => ['auth']], function(){
     Route::delete('empleado/{empleado}','EmpleadoController@destroy')->name('empleado.destroy')->middleware("authByName");
 
 });
-
-Route::get('crud','CrudController@index')->name('crud.index')->middleware("authByName");
