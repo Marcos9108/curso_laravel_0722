@@ -32,3 +32,17 @@ Route::get('empleado/{empleado}/edit','EmpleadoController@edit')->name('empleado
 Route::put('empleado/{emppleado}','EmpleadoController@update')->name('empleado.update');
 
 Route::delete('empleado/{empleado}','EmpleadoController@destroy')->name('empleado.destroy')->middleware("authByName");
+
+//Nuevas rutas Datos contacto
+
+Route::get('datoContacto','DatoContactoController@index')->name('datoContacto.index');
+
+Route::get('datoContacto/create','DatoContactoController@create')->name('datoContacto.create')->middleware("authByName");
+Route::post('datoContacto','DatoContactoController@store')->name('empleado.store');
+
+Route::get('datoContacto/{datoContacto}/show','DatoContactoController@show')->name('datoContacto.show');
+
+Route::get('datoContacto/{datoContacto}/edit','DatoContactoController@edit')->name('datoContacto.edit')->middleware("authByName");
+Route::put('datoContacto/{datoContacto}','DatoContactoController@update')->name('datoContacto.update');
+
+Route::delete('datoContacto/{datoContacto}','DatoContactoController@destroy')->name('datoContacto.destroy')->middleware("authByName");
