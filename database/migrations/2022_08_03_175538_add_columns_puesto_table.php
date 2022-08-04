@@ -16,7 +16,9 @@ class AddColumnsPuestoTable extends Migration
         Schema::table('puesto', function (Blueprint $table) {
             $table->string('nombre', 50)->after('id');
             $table->string('requisitos', 30)->after('nombre');
-            $table->String('rango_salario',50)->after('requisitos');
+            
+            $table->string('rango_salario')->after('requisitos');
+
             $table->string('puestos_disponibles', 50)->after('rango_salario');
         });
     }

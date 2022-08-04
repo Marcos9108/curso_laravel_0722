@@ -19,18 +19,19 @@
                     <div class="col-xs-12 col-sm-12 col-md-12"> <br>
                         <a href="{{ route('empleado.index') }}" class="btn btn-info btn-block" >Ir a empleados</a>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <a href="{{ route('puesto.index') }}" class="btn btn-info btn-block" >Ir a puestos</a>
-                    </div>
 
 
-                    <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="col-xs-12 col-sm-12 col-md-12"> <br>
                         <a href="{{ route('certificaciones.index') }}" class="btn btn-info btn-block">Ir a certificaciones</a>
                     </div>
 
 
-                    <div class="col-xs-12 col-sm-12 col-md-12"> <br>
+                    <div class="col-xs-12 col-sm-12 col-md-12"> <br> <br>
                         <a href="{{ route('proyectos.index') }}" class="btn btn-info btn-block" >Ir a Proyectos</a>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12"> <br>
+                        <a href="{{ route('puesto.index') }}" class="btn btn-info btn-block" >Ir a puestos</a>
                     </div>
 
                 </div>
