@@ -24,10 +24,12 @@ class RedirectByName
     public function handle($request, Closure $next)
     {
         if($this->auth && $this->auth->user()->name == 'Admin'){
+            //return redirect()->route('empleado.index');
             return $next($request);
         } else {
+            // Permiso denegado
             //$this->auth->logout();
-            return redirect()->route('empleado.index');
+            return back();
         }
     }
 }
