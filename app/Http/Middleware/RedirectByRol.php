@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
-class RedirectByName
+class RedirectByRol
 {
     protected $auth;
 
@@ -23,16 +23,11 @@ class RedirectByName
      */
     public function handle($request, Closure $next)
     {
-        if($this->auth && $this->auth->user()->rol == 'Admin'){
-            //return redirect()->route('empleado.index');
+        if($this->auth && $this->auth->user()->rol == 'Empleado'){
             return $next($request);
         } else {
-            // Permiso denegado
             //$this->auth->logout();
-
-            //return redirect()->route('empleado.index');
-            return $next($request);
- 
+            return redirect()->route('empleado.index');
         }
     }
 }
