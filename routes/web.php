@@ -30,7 +30,7 @@ Route::group(['middleware' => ['auth']], function(){
 
     Route::get('empleado','EmpleadoController@index')->name('empleado.index')->middleware('auth');
 
-    Route::get('empleado/create','EmpleadoController@create')->name('empleado.create')->middleware("authByName",);
+    Route::get('empleado/create','EmpleadoController@create')->name('empleado.create')->middleware("authByRol");
     Route::post('empleado','EmpleadoController@store')->name('empleado.store');
 
     Route::get('empleado/{empleado}/show','EmpleadoController@show')->name('empleado.show');

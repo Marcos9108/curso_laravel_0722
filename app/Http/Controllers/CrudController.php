@@ -13,7 +13,7 @@ class CrudController extends Controller
 
     public function index()
     {
-        //$crud = Crud::orderBy('id','DESC')->paginate(3);
+        $users = User::orderBy('id','DESC')->paginate(3);
         return view('crud.index');
     }
 }

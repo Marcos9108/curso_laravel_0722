@@ -14,7 +14,7 @@ class AddColumnUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('rol', 20)->after('name');
+            $table->string('rol', 20)->after('name')->default("Empleado");
         });
     }
 

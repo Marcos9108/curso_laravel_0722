@@ -14,13 +14,16 @@
 
                     <div class="pull-right">
 
+                        @if(\Illuminate\Support\Facades\Auth::user()->rol == "Admin")
                         <div class="btn-group">
                             <a href="{{route('crud.index')}}" class="btn btn-success">Añadir empleados con rol</a>
                         </div>
 
+
                         <div class="btn-group">
                             <a href="{{route('empleado.create')}}" class="btn btn-success">Añadir empleado</a>
                         </div>
+                        @endif
                     </div>
 
                     <div class="table-container">

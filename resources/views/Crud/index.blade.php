@@ -29,7 +29,7 @@
                             <label for="name" class="col-md-4 control-label">Rol</label>
 
                             <div class="col-md-6">
-                                <input id="rol" type="text" class="form-control" name="rol" placeholder="Admin/Empleado" value="{{ old('name') }}" required autofocus>
+                                <input id="rol" type="text" class="form-control" name="rol" placeholder="Admin/Empleado" value="{{ old('rol') }}" required autofocus>
 
                                 @if ($errors->has('rol'))
                                     <span class="help-block">
