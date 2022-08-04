@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Menú</div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -14,11 +14,17 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    ¡Estás conectado!
 
-                    <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="col-xs-12 col-sm-12 col-md-12"> <br>
                         <a href="{{ route('empleado.index') }}" class="btn btn-info btn-block" >Ir a empleados</a>
                     </div>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12"> <br>
+                        <a href="{{ route('proyectos.index') }}" class="btn btn-info btn-block" >Ir a Proyectos</a>
+                    </div>
+
+                  
 
                 </div>
             </div>
