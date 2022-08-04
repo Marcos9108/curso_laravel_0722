@@ -40,8 +40,8 @@ class PuestoController extends Controller
         $this->validate($request,[
             'nombre' => 'required',
             'requisitos' => 'required',
-            'rango_salario' => 'required|numeric',
-            'puestos_disponibles    '=> 'required']);
+            'rango_salario' => 'required',
+            'puestos_disponibles'=> 'required']);
 
         $arrayStore =[
             'nombre' => $request->get("nombre"),

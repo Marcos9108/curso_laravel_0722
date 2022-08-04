@@ -41,7 +41,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="number" name="rango_salario" id="rango_salario" class="form-control input-sm" placeholder="Rangos de salarios" value="{{ old('rango_salario', $puesto->rango_salario) }}">
+                                        <input type="text" name="rango_salario" id="rango_salario" class="form-control input-sm" placeholder="Rangos de salarios" value="{{ old('rango_salario', $puesto->rango_salario) }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
