@@ -22,7 +22,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('empleado','EmpleadoController@index')->name('empleado.index');
 
-
 //Route::resource('empleado','EmpleadoController');
 
 
@@ -39,5 +38,26 @@ Route::group(['middleware' => ['auth']], function(){
     Route::put('empleado/{emppleado}','EmpleadoController@update')->name('empleado.update');
 
     Route::delete('empleado/{empleado}','EmpleadoController@destroy')->name('empleado.destroy')->middleware("authByName");
+
+});
+
+        //Route::resource('puesto','PuestoController');
+
+
+Route::get('puesto', 'PuestoController@index')->name('puesto.index');
+
+Route::group(['middleware' => ['auth']], function(){
+
+    Route::get('puesto','PuestoController@index')->name('PuestoController.index')->middleware('auth');
+
+    Route::get('puesto/create','PuestoController@create')->name('puesto.create')->middleware("authByName");
+    Route::post('puesto','PuestoController@store')->name('puesto.store');
+
+    Route::get('puesto/{puesto}/show','PuestoController')->name('puesto.show');
+
+    Route::get('puesto/{puesto}/edit','PuestoController@edit')->name('puesto.edit')->middleware("authByName");
+    Route::put('puesto/{puesto}','PuestoController@update')->name('puesto.update');
+
+    Route::delete('puesto/{puesto}','PuestoController@destroy')->name('puesto..destroy')->middleware("authByName");
 
 });
