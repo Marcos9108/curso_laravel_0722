@@ -50,7 +50,7 @@ Route::get('puesto/create','PuestoController@create')->name('puesto.create')->mi
     Route::get('puesto/{puesto}/edit','PuestoController@edit')->name('puesto.edit')->middleware("authByName");
     Route::put('puesto/{puesto}','PuestoController@update')->name('puesto.update');
 
-    Route::delete('puesto/{puesto}','PuestoController@destroy')->name('puesto..destroy')->middleware("authByName");
+    Route::delete('puesto/{puesto}','PuestoController@destroy')->name('puesto.destroy')->middleware("authByName");
 
 
     //Route::resource('proyectos', 'ProyectosController');

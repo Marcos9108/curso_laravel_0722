@@ -15,8 +15,10 @@
                     <div class="pull-right">
                         <div class="btn-group">
                             <a href="{{route('puesto.create')}}" class="btn btn-success">Añadir puesto</a>
+                            <a href="{{ route('home')  }}" class="btn btn-default"> Regresar</a>
                         </div>
                     </div>
+                    
 
                     <div class="table-container">
                         <table id="tablaPuesto" class="table table-bordered table-striped">

@@ -18,7 +18,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"> Editar Empleado</h3>
+                        <h3 class="panel-title"> Editar Puesto</h3>
                     </div>
                     <div class="panel-body">
                         <form method="POST" action="{{route('puesto.update', $puesto->id)}}" role="form">
