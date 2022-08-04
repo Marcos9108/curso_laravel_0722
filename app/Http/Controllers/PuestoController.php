@@ -13,7 +13,8 @@ class PuestoController extends Controller
      */
     public function index()
     {
-        //
+        $puesto = Puesto::orderBy('id','DESC')->paginate(3);
+        return view('Puesto.index',compact('puesto'));
     }
 
     /**
@@ -23,7 +24,7 @@ class PuestoController extends Controller
      */
     public function create()
     {
-        //
+        return view('Puesto.create');
     }
 
     /**
@@ -34,7 +35,24 @@ class PuestoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+
+        $this->validate($request,[
+            'nombre' => 'required',
+            'requisitos' => 'required',
+            'rango_salario' => 'required|numeric',
+            'puestos_disponibles    '=> 'required']);
+
+        $arrayStore =[
+            'nombre' => $request->get("nombre"),
+            'requisitos' => $request->get('requisitos'),
+            'rango_salario' => $request->get('rango_salario'),
+            'puestos_disponibles' => $request->get('puestos_disponibles')
+        ];
+
+        Empleado::create($arrayStore);
+
+        return redirect()->route('puesto.index')->with('success','Registro creado satisfactoriamente');
     }
 
     /**
@@ -45,7 +63,8 @@ class PuestoController extends Controller
      */
     public function show($id)
     {
-        //
+        $puesto = puesto::find($id);
+        return view('Puesto.show',compact('puesto'));
     }
 
     /**
@@ -56,7 +75,8 @@ class PuestoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $puesto = puesto::find($id);
+        return view('Puesto.edit',compact('puesto'));
     }
 
     /**
@@ -68,7 +88,10 @@ class PuestoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,['nombre' => 'required','requisitos' => 'required','rango_salario' => 'required','puestos_disponibles' => 'required']);
+        Puesto::find($id)->update($request->all());
+
+        return redirect()->route('puesto.index')->with('success','Registro actualizado satisfactoriamente');
     }
 
     /**
@@ -79,6 +102,7 @@ class PuestoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Puesto::find($id)->delete();
+        return redirect()->route('puesto.index')->with('success','Registro eliminado satisfactoriamente');
     }
 }
