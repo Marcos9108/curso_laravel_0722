@@ -19,20 +19,28 @@
                             <th>Acciones</th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Nombre</td>
-                                <td>Proveedor</td>
-                                <td>2022-08-02</td>
-                                <td>Nacional</td>
-                                <td>2022-09-02</td>
-                                <td>
-                                    <a class="btn btn-primary btn-xs" href=""><span class="glyphicon glyphicon-eye-open"></span></a>
-                                    <a class="btn btn-primary btn-xs" href=""><span class="glyphicon glyphicon-edit"></span></a>
-                                    <form action="" method="post">
-                                        <button class="btn btn-danger btn-xs" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
-                                    </form>
-                                </td>
-                            </tr>
+                            @if($listaCertificaciones->count())
+                                @foreach($listaCertificaciones as $certificacion)
+                                    <tr>
+                                        <td>{{$certificacion->nombre}}</td>
+                                        <td>{{$certificacion->proveedor}}</td>
+                                        <td>{{$certificacion->duracion}}</td>
+                                        <td>{{$certificacion->validez == 0 ? 'Nacional':'Internacional'}}</td>
+                                        <td>{{$certificacion->expira}}</td>
+                                        <td>
+                                            <a class="btn btn-primary btn-xs" href="{{route('certificaciones.show', $certificacion->id)}}"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                            <a class="btn btn-primary btn-xs" href="{{route('certificaciones.edit', $certificacion->id)}}"><span class="glyphicon glyphicon-edit"></span></a>
+                                            <form action="" method="post">
+                                                <button class="btn btn-danger btn-xs" type="submit"><span class="glyphicon glyphicon-trash"></span></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @else
+                                <tr>
+                                        <td colspan="6">No hay registros</td>
+                                    </tr>
+                            @endif
                         </tbody>
 
                     </table>
