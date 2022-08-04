@@ -16,9 +16,9 @@
                         <div class="btn-group">
                             <div class="row">
                                 <div class="col-md-12">
-                            <a href="{{route('empleado.create')}}" class="btn btn-success">Añadir empleado </a>
-                            <a href="http://curso-laravel-0722.com/home"class="btn btn-success"> Atras</a>
-                            <br>
+                            <a href="{{route('empleado.create')}}" class="btn btn-success">Añadir Empleado </a>
+                            <a href="{{route('home')}}"class="btn btn-success">Atras</a>
+                            
                         </div>
                     </div>
                         </div>

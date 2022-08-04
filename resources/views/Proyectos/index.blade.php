@@ -17,7 +17,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                             <a href="{{route('proyectos.create')}}" class="btn btn-success">Añadir Proyecto</a>
-                            <a href="http://curso-laravel-0722.com/home"class="btn btn-success"> Atras</a>
+                            <a href="{{route('home')}}"class="btn btn-success"> Atras</a>
                             
                         </div>
                     </div>
