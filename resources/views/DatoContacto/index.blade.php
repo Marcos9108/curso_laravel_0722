@@ -10,40 +10,40 @@
                     </div>
                 @endif
                 <div class="panel-body">
-                    <div><h3>Lista Empleados</h3></div>
+                    <div><h3>Lista Datos de Contacto de Empleados</h3></div>
 
                     <div class="pull-right">
                         <div class="btn-group">
-                            <a href="{{route('empleado.create')}}" class="btn btn-success">Añadir empleado</a>
+                            <a href="{{route('datoContacto.create')}}" class="btn btn-success">Añadir datos de empleado</a>
                         </div>
                     </div>
 
                     <div class="table-container">
-                        <table id="tablaEmpleados" class="table table-bordered table-striped">
+                        <table id="tablaDatoContacto" class="table table-bordered table-striped">
                             <thead>
                                 <th>Nombre</th>
-                                <th>Edad</th>
-                                <th>Puesto</th>
-                                <th>Activo</th>
-                                <th>Salario</th>
+                                <th>Email</th>
+                                <th>Telefono</th>
+                                <th>Direccion</th>
+                                <th>Estado</th>
                                 <th>Acciones</th>
                             </thead>
                             <tbody>
 
-                            @if($empleados->count())
-                                @foreach($empleados as $empleado)
+                            @if($datosContactos->count())
+                                @foreach($datosContactos as $datoContacto)
                                     <tr>
-                                        <td>{{$empleado->nombre}}</td>
-                                        <td>{{$empleado->edad}}</td>
-                                        <td>{{$empleado->puesto}}</td>
-                                        <td>{{$empleado->activo}}</td>
-                                        <td>{{$empleado->salario}}</td>
+                                        <td>{{$datoContacto->nombre}}</td>
+                                        <td>{{$datoContacto->email}}</td>
+                                        <td>{{$datoContacto->telefono}}</td>
+                                        <td>{{$datoContacto->direccion}}</td>
+                                        <td>{{$datoContacto->estado}}</td>
                                         <td>
                                             
-                                            <a class="btn btn-primary btn-xs" href="{{route('empleado.show', $empleado->id)}}" ><span class="glyphicon glyphicon-eye-open"></span></a>
-                                            <a class="btn btn-primary btn-xs" href="{{route('empleado.edit', $empleado->id)}}" ><span class="glyphicon glyphicon-edit"></span></a>
+                                            <a class="btn btn-primary btn-xs" href="{{route('datoContacto.show', $datoContacto->id)}}" ><span class="glyphicon glyphicon-eye-open"></span></a>
+                                            <a class="btn btn-primary btn-xs" href="{{route('datoContacto.edit', $datoContacto->id)}}" ><span class="glyphicon glyphicon-edit"></span></a>
 
-                                            <form action="{{route('empleado.destroy', $empleado->id)}}" method="post">
+                                            <form action="{{route('datoContacto.destroy', $datoContacto->id)}}" method="post">
                                                 {{csrf_field()}}
                                                 <input name="_method" type="hidden" value="DELETE">
 
