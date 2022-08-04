@@ -33,7 +33,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-label">Email address</label>
-                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                        <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com"  value="{{ old('email') }}">
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                                     <div class="form-group">
                                     <label class="form-label">Estado</label>
                                     <br>
-                                    <select class="form-select">
+                                    <select class="form-select" name="estado">
                                         <option selected>Seleccionar estado</option>
                                         <option value="1">Aguascalientes</option>
                                         <option value="2">Baja California </option>
@@ -96,7 +96,6 @@
                                     </div>
                                 </div>
                             </div>
-</div>
 
                             <div class="row">
                                 <div class="col-md-12">

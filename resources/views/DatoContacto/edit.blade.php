@@ -51,9 +51,16 @@
                                 </div>
                             </div>
                             <div class="row">
-                            <div class="col-md-4">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="estado" id="estado" class="form-control input-sm" placeholder="Estado" value="{{ old('estado', $datoContacto->estado) }}">
+                                        <label class="form-label">Estado</label>
+                                        <br>
+                                        <select class="form-select" name="estado">
+                                            <option selected>Seleccionar estado</option>
+                                            @foreach($estadosArray as $index => $estado)
+                                            <option value="{{$index}}" {{(int)$index == (int)$datoContacto->estado ? 'selected' : ''}}>{{$estado}}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                             </div>

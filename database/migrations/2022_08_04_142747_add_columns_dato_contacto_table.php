@@ -17,9 +17,9 @@ class AddColumnsDatoContactoTable extends Migration
         Schema::table('datoContacto', function (Blueprint $table) {
             $table->string('nombre', 50)->after('id');
             $table->string('email', 30)->after('nombre');
-            $table->tinyInteger('telefono')->after('email');
-            $table->integer('direccion')->after('telefono');
-            $table->boolean('estado')->after('direccion');
+            $table->integer('telefono')->after('email');
+            $table->string('direccion')->after('telefono');
+            $table->string('estado')->after('direccion');
         });
     }
 
