@@ -38,7 +38,7 @@ Route::delete('empleado/{empleado}','EmpleadoController@destroy')->name('emplead
 Route::get('datoContacto','DatoContactoController@index')->name('datoContacto.index');
 
 Route::get('datoContacto/create','DatoContactoController@create')->name('datoContacto.create')->middleware("authByName");
-Route::post('datoContacto','DatoContactoController@store')->name('empleado.store');
+Route::post('datoContacto','DatoContactoController@store')->name('datoContacto.store');
 
 Route::get('datoContacto/{datoContacto}/show','DatoContactoController@show')->name('datoContacto.show');
 
