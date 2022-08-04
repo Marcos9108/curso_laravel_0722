@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
-class RedirectByName
+class RedirectByRol
 {
     protected $auth;
 
@@ -23,7 +23,7 @@ class RedirectByName
      */
     public function handle($request, Closure $next)
     {
-        if($this->auth && $this->auth->user()->rol == 'Admin'){
+        if($this->auth && $this->auth->user()->rol == 'Empleado'){
             return $next($request);
         } else {
             //$this->auth->logout();

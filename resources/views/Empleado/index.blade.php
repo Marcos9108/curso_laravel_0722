@@ -13,6 +13,11 @@
                     <div><h3>Lista Empleados</h3></div>
 
                     <div class="pull-right">
+
+                        <div class="btn-group">
+                            <a href="{{route('crud.index')}}" class="btn btn-success">Añadir empleados con rol</a>
+                        </div>
+
                         <div class="btn-group">
                             <a href="{{route('empleado.create')}}" class="btn btn-success">Añadir empleado</a>
                         </div>

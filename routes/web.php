@@ -30,16 +30,16 @@ Route::group(['middleware' => ['auth']], function(){
 
     Route::get('empleado','EmpleadoController@index')->name('empleado.index')->middleware('auth');
 
-    Route::get('empleado/create','EmpleadoController@create')->name('empleado.create')->middleware("authByName");
+    Route::get('empleado/create','EmpleadoController@create')->name('empleado.create')->middleware("authByName",);
     Route::post('empleado','EmpleadoController@store')->name('empleado.store');
 
     Route::get('empleado/{empleado}/show','EmpleadoController@show')->name('empleado.show');
 
-    Route::get('empleado/{empleado}/edit','EmpleadoController@edit')->name('empleado.edit')->middleware("authByName");
+    Route::get('empleado/{empleado}/edit','EmpleadoController@edit')->name('empleado.edit')->middleware("authByRol");
     Route::put('empleado/{emppleado}','EmpleadoController@update')->name('empleado.update');
 
     Route::delete('empleado/{empleado}','EmpleadoController@destroy')->name('empleado.destroy')->middleware("authByName");
 
 });
 
-Route::get('crud','CrudController@index')->name('crud.index');
+Route::get('crud','CrudController@index')->name('crud.index')->middleware("authByName");
