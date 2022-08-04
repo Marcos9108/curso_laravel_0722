@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\ProyectosController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,3 +33,18 @@ Route::get('empleado/{empleado}/edit','EmpleadoController@edit')->name('empleado
 Route::put('empleado/{emppleado}','EmpleadoController@update')->name('empleado.update');
 
 Route::delete('empleado/{empleado}','EmpleadoController@destroy')->name('empleado.destroy')->middleware("authByName");
+
+
+
+//Route::resource('proyectos', 'ProyectosController');
+Route::get('proyectos','ProyectosController@index')->name('proyectos.index');
+Route::get('proyectos/create','ProyectosController@create')->name('proyectos.create')->middleware("authByName");
+Route::post('proyectos','ProyectosController@store')->name('proyectos.store');
+
+Route::get('proyectos/{proyectos}/show','ProyectosController@show')->name('proyectos.show');
+
+Route::get('proyectos/{proyectos}/edit','ProyectosController@edit')->name('proyectos.edit')->middleware("authByName");
+Route::put('proyectos/{proyectos}','ProyectosController@update')->name('proyectos.update');
+Route::delete('proyectos/{proyectos}','ProyectosController@destroy')->name('proyectos.destroy')->middleware("authByName");
+
+//Route::get('/proyectos', [ProyectosController::class, 'index']);

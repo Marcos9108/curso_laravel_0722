@@ -10,47 +10,46 @@
                     </div>
                 @endif
                 <div class="panel-body">
-                    <div><h3>Lista Empleados</h3></div>
+                    <div><h3>Lista Proyectos</h3></div>
 
                     <div class="pull-right">
                         <div class="btn-group">
                             <div class="row">
                                 <div class="col-md-12">
-                            <a href="{{route('empleado.create')}}" class="btn btn-success">Añadir empleado </a>
+                            <a href="{{route('proyectos.create')}}" class="btn btn-success">Añadir Proyecto</a>
                             <a href="http://curso-laravel-0722.com/home"class="btn btn-success"> Atras</a>
-                            <br>
+                            
                         </div>
                     </div>
                         </div>
                     </div>
 
-                    <div class="table-container"> 
-                        <table id="tablaEmpleados" class="table table-bordered table-striped">
-                            
+                    <div class="table-container">
+                       <br> <table id="tablaProyectos" class="table table-bordered table-striped">
                             <thead>
                                 <th>Nombre</th>
-                                <th>Edad</th>
-                                <th>Puesto</th>
-                                <th>Activo</th>
-                                <th>Salario</th>
+                                <th>Lenguaje de Programacion</th>
+                                <th>Plataforma</th>
+                                <th>Porcentaje Avance %</th>
+                                <th>Personal Involucrado</th>
                                 <th>Acciones</th>
                             </thead>
                             <tbody>
 
-                            @if($empleados->count())
-                                @foreach($empleados as $empleado)
+                            @if($proyectos->count())
+                                @foreach($proyectos as $proyectos)
                                     <tr>
-                                        <td>{{$empleado->nombre}}</td>
-                                        <td>{{$empleado->edad}}</td>
-                                        <td>{{$empleado->puesto}}</td>
-                                        <td>{{$empleado->activo}}</td>
-                                        <td>{{$empleado->salario}}</td>
+                                        <td>{{$proyectos->nombre}}</td>
+                                        <td>{{$proyectos->lenguajeProgramacion}}</td>
+                                        <td>{{$proyectos->plataforma}}</td>
+                                        <td>{{$proyectos->porcentajeAvance}}</td>
+                                        <td>{{$proyectos->personalInvolucrado}}</td>
                                         <td>
                                             
-                                            <a class="btn btn-primary btn-xs" href="{{route('empleado.show', $empleado->id)}}" ><span class="glyphicon glyphicon-eye-open"></span></a>
-                                            <a class="btn btn-primary btn-xs" href="{{route('empleado.edit', $empleado->id)}}" ><span class="glyphicon glyphicon-edit"></span></a>
+                                            <a class="btn btn-primary btn-xs" href="{{route('proyectos.show', $proyectos->id)}}" ><span class="glyphicon glyphicon-eye-open"></span></a>
+                                            <a class="btn btn-primary btn-xs" href="{{route('proyectos.edit', $proyectos->id)}}" ><span class="glyphicon glyphicon-edit"></span></a>
 
-                                            <form action="{{route('empleado.destroy', $empleado->id)}}" method="post">
+                                            <form action="{{route('proyectos.destroy', $proyectos->id)}}" method="post">
                                                 {{csrf_field()}}
                                                 <input name="_method" type="hidden" value="DELETE">
 
@@ -65,6 +64,9 @@
                                 <tr>
                                     <td colspan="6">No hay registros</td>
                                 </tr>
+
+                                
+
                             @endif
                             </tbody>
                         </table>
