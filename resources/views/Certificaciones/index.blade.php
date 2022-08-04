@@ -16,7 +16,7 @@
 
                 <div class="pull-right">
                     <div class="btn-group">
-                        <a href="{{route('certificaciones.create')}}" class="btn btn-success">Añadir empleado</a>
+                        <a href="{{route('certificaciones.create')}}" class="btn btn-success">Añadir certificación</a>
                     </div>
                 </div>
 
