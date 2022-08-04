@@ -24,6 +24,10 @@
                             <div class="row">
                                 <div class="col-md-12">
 
+                            <a href="{{route('empleado.create')}}" class="btn btn-success">Añadir Empleado </a>
+                            <a href="{{route('home')}}"class="btn btn-success">Atras</a>
+                            
+
                             <a href="{{route('empleado.create')}}" class="btn btn-success">Añadir empleado </a>
                             <a href="{{route('home')}}"class="btn btn-success"> Atras</a>
                             <br>

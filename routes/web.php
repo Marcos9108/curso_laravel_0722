@@ -12,6 +12,9 @@
 */
 use App\Http\Controllers\ProyectosController;
 
+//use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -20,9 +23,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+<<<<<<< HEAD
 
 Route::group(['middleware' => ['auth']], function(){
     
+=======
+Route::get('certificaciones','CertificacionesController@index')->name('certificaciones.index');
+>>>>>>> 5d23dc467343e9f978543fb655ce5f68349f81a3
 Route::get('empleado','EmpleadoController@index')->name('empleado.index');
 
 
@@ -44,6 +51,17 @@ Route::group(['middleware' => ['auth']], function(){
 
     Route::delete('empleado/{empleado}','EmpleadoController@destroy')->name('empleado.destroy')->middleware("authByName");
 
+    Route::get('certificaciones','CertificacionesController@index')->name('certificaciones.index')->middleware("auth");
+    Route::get('certificaciones/{certificaciones}/show','CertificacionesController@show')->name('certificaciones.show');
+    
+    Route::get('certificaciones/create','CertificacionesController@create')->name('certificaciones.create')->middleware("authByName");
+    
+    Route::get('certificaciones/{certificaciones}/edit','CertificacionesController@edit')->name('certificaciones.edit')->middleware("authByName");
+    Route::put('certificaciones/{certificaciones}','CertificacionesController@update')->name('certificaciones.update');
+    Route::post('certificaciones','CertificacionesController@store')->name('certificaciones.store');
+
+    Route::delete('certificaciones/{certificaciones}','CertificacionesController@destroy')->name('certificaciones.destroy')->middleware("authByName");
+
     //Route::resource('proyectos', 'ProyectosController');
     Route::get('proyectos','ProyectosController@index')->name('proyectos.index');
     Route::get('proyectos/create','ProyectosController@create')->name('proyectos.create')->middleware("authByName");
@@ -58,6 +76,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('crud','CrudController@index')->name('crud.index')->middleware("authByName");
 });
 
+<<<<<<< HEAD
 //Route::get('/proyectos', [ProyectosController::class, 'index']);
 });
 
+=======
+>>>>>>> 5d23dc467343e9f978543fb655ce5f68349f81a3
