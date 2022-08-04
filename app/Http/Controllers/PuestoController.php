@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Puesto;
 use Illuminate\Http\Request;
 
 class PuestoController extends Controller
@@ -50,7 +50,7 @@ class PuestoController extends Controller
             'puestos_disponibles' => $request->get('puestos_disponibles')
         ];
 
-        Empleado::create($arrayStore);
+        Puesto::create($arrayStore);
 
         return redirect()->route('puesto.index')->with('success','Registro creado satisfactoriamente');
     }

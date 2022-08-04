@@ -17,7 +17,7 @@
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"> Agregar Empleado</h3>
+                        <h3 class="panel-title"> Agregar Puesto</h3>
                     </div>
                     <div class="panel-body">
                         <form method="POST" action="{{route('puesto.store')}}">
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="puestos_disponibles" id="puestos_disponibles" class="form-control input-sm" placeholder="Puestos disponibles" value="{{ old('puestos_disponibles') }}">
+                                        <input type="text" name="puestos_disponibles" id="puestos_disponibles" class="form-control input-sm" placeholder="Puestos disponibles">
                                     </div>
                                 </div>
                             </div>

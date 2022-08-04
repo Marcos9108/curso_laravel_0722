@@ -14,12 +14,19 @@
 
                     <div class="pull-right">
                         <div class="btn-group">
-                            <a href="{{route('empleado.create')}}" class="btn btn-success">Añadir empleado</a>
+                            <div class="row">
+                                <div class="col-md-12">
+                            <a href="{{route('empleado.create')}}" class="btn btn-success">Añadir empleado </a>
+                            <a href="{{route('home')}}"class="btn btn-success"> Atras</a>
+                            <br>
+                        </div>
+                    </div>
                         </div>
                     </div>
 
-                    <div class="table-container">
+                    <div class="table-container"> 
                         <table id="tablaEmpleados" class="table table-bordered table-striped">
+                            
                             <thead>
                                 <th>Nombre</th>
                                 <th>Edad</th>
