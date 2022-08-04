@@ -22,8 +22,8 @@ class DatoContactoController extends Controller
      */
     public function index()
     {
-        $datosContacto = DatoContacto::orderBy('id','DESC')->paginate(3);
-        return view('DatoContacto.index',compact('datosContacto'));
+        $datosContactos = DatoContacto::orderBy('id','DESC')->paginate(3);
+        return view('DatoContacto.index',compact('datosContactos'));
     }
 
     /**
@@ -85,8 +85,8 @@ class DatoContactoController extends Controller
      */
     public function edit($id)
     {
-        $empleado = Empleado::find($id);
-        return view('Empleado.edit',compact('empleado'));
+        $datoContacto = DatoContacto::find($id);
+        return view('DatoContacto.edit',compact('datoContacto'));
     }
 
     /**
@@ -98,7 +98,7 @@ class DatoContactoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,['nombre' => 'required','edad' => 'required','puesto' => 'required','activo' => 'required','salario'=> 'required']);
+        $this->validate($request,['nombre' => 'required','email' => 'required','telefono' => 'required','direccion' => 'required','estado'=> 'required']);
         DatoContacto::find($id)->update($request->all());
 
         return redirect()->route('datoContacto.index')->with('success','Registro actualizado satisfactoriamente');
