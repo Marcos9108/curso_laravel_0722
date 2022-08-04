@@ -11,6 +11,9 @@
 |
 */
 
+//use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -42,5 +45,13 @@ Route::group(['middleware' => ['auth']], function(){
 
 
     Route::get('certificaciones','CertificacionesController@index')->name('certificaciones.index')->middleware("auth");
+    Route::get('certificaciones/{certificaciones}/show','CertificacionesController@show')->name('certificaciones.show');
+    
+    Route::get('certificaciones/create','CertificacionesController@create')->name('certificaciones.create')->middleware("authByName");
+    
+    Route::get('certificaciones/{certificaciones}/edit','CertificacionesController@edit')->name('certificaciones.edit')->middleware("authByName");
+    Route::put('certificaciones/{certificaciones}','CertificacionesController@update')->name('certificaciones.update');
+    Route::post('certificaciones','CertificacionesController@store')->name('certificaciones.store');
 
+    Route::delete('certificaciones/{certificaciones}','CertificacionesController@destroy')->name('certificaciones.destroy')->middleware("authByName");
 });
