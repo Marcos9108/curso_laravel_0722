@@ -25,8 +25,10 @@ class RedirectByName
     {
         if($this->auth && $this->auth->user()->name != 'Admin'){
             //$this->auth->logout();
-            return redirect()->route('empleado.index');
-        }
+            //return redirect()->route('empleado.index');
+            return $next($request);
+        }else{
         return $next($request);
+        }
     }
 }
