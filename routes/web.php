@@ -22,6 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Route::resource('empleado','EmpleadoController');
 
+Route::group(['middleware' => ['auth']], function(){
+    
 Route::get('empleado','EmpleadoController@index')->name('empleado.index');
 
 Route::get('empleado/create','EmpleadoController@create')->name('empleado.create')->middleware("authByName");
@@ -48,3 +50,4 @@ Route::put('proyectos/{proyectos}','ProyectosController@update')->name('proyecto
 Route::delete('proyectos/{proyectos}','ProyectosController@destroy')->name('proyectos.destroy')->middleware("authByName");
 
 //Route::get('/proyectos', [ProyectosController::class, 'index']);
+});
