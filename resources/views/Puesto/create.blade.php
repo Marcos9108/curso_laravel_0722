@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <input type="text" name="puestos_disponibles" id="puestos_disponibles" class="form-control input-sm" placeholder="Puestos disponibles">
+                                        <input type="text" name="puestos_disponibles" id="puestos_disponibles" class="form-control input-sm" placeholder="Puestos disponibles" value="{{ old('puestos_disponibles') }}">
                                     </div>
                                 </div>
                             </div>
