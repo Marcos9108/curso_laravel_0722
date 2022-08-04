@@ -30,9 +30,8 @@ class RedirectByName
             // Permiso denegado
             //$this->auth->logout();
 
-            //return redirect()->route('empleado.index');
-            return $next($request);
- 
+            return back();
+
         }
     }
 }
