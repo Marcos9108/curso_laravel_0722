@@ -13,6 +13,13 @@
                     <div><h3>Lista Empleados</h3></div>
 
                     <div class="pull-right">
+
+                        @if(\Illuminate\Support\Facades\Auth::user()->rol == "Admin")
+                        <div class="btn-group">
+                            <a href="{{route('crud.index')}}" class="btn btn-success">Añadir empleados con rol</a>
+                        </div>
+
+
                         <div class="btn-group">
                             <div class="row">
                                 <div class="col-md-12">
@@ -22,6 +29,7 @@
                         </div>
                     </div>
                         </div>
+                        @endif
                     </div>
 
                     <div class="table-container"> 
